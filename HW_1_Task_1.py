@@ -7,11 +7,12 @@ lst = result.stdout.split("\n")
 def my_func(command, text):
 	if command.returncode == 0:
 		if 'PRETTY_NAME="Ubuntu 22.04.5 LTS"' in text and 'VERSION="22.04.5 LTS (Jammy Jellyfish)"' in text:
-			print("TRUE")
+			return "TRUE"
 		else:
-			print("FALSE")
+			return "FALSE"
 	else:
-		print("FALSE")
+		return "FALSE"
 
 
-print(my_func(result, lst))
+if __name__ == '__main__':
+	print(my_func(result, lst))
